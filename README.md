@@ -113,14 +113,8 @@ python src/visualize_results.py
 
 If you use this code in your research, please cite:
 
-```bibtex
-@article{vaezi2025supra,
-  author  = {Vaezi, Ali and Rabbani, Erfan and Bruno, Giulia},
-  title   = {When Do Sustainability Priors Help Reinforcement Learning? A Hybrid FBWM--FTOPSIS--PPO Framework for Dynamic Supplier Order Allocation},
-  journal = {Journal of Cleaner Production},
-  year    = {2025}
-}
-```
+...
+
 
 ---
 
