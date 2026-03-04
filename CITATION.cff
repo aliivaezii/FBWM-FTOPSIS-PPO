@@ -1,0 +1,39 @@
+cff-version: 1.2.0
+title: >-
+  SUPRA-PPO: A Hybrid FBWM–FTOPSIS–PPO Framework for Dynamic
+  Supplier Order Allocation
+message: >-
+  If you use this software, please cite it using the metadata
+  from this file.
+type: software
+authors:
+  - given-names: Ali
+    family-names: Vaezi
+    email: ali.vaezi@studenti.polito.it
+    affiliation: Politecnico di Torino
+  - given-names: Erfan
+    family-names: Rabbani
+    affiliation: Politecnico di Torino
+  - given-names: Giulia
+    family-names: Bruno
+    affiliation: Politecnico di Torino
+repository-code: https://github.com/aliivaezii/FBWM-FTOPSIS-PPO
+license: MIT
+version: 1.0.0
+date-released: "2026-03-04"
+keywords:
+  - reinforcement-learning
+  - supply-chain-management
+  - multi-criteria-decision-making
+  - proximal-policy-optimization
+  - fuzzy-topsis
+  - fuzzy-bwm
+  - sustainability
+  - supplier-selection
+  - order-allocation
+abstract: >-
+  A two-phase hybrid framework integrating Fuzzy Best-Worst Method
+  (FBWM) and Fuzzy TOPSIS with a Sustainability-Prioritised Adaptive
+  Proximal Policy Optimization (SUPRA-PPO) agent for multi-objective
+  supplier order allocation under non-stationary demand and systemic
+  disruptions.

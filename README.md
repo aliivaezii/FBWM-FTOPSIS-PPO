@@ -1,10 +1,76 @@
-# SUPRA-PPO: A Hybrid FBWM–FTOPSIS–PPO Framework for Dynamic Supplier Order Allocation
+<div align="center">
 
-> **Paper:** "When Do Sustainability Priors Help Reinforcement Learning? A Hybrid FBWM–FTOPSIS–PPO Framework for Dynamic Supplier Order Allocation"
+# SUPRA-PPO
+
+### A Hybrid FBWM–FTOPSIS–PPO Framework for Dynamic Supplier Order Allocation
+
+[![Python 3.9+](https://img.shields.io/badge/Python-3.9%2B-blue.svg)](https://www.python.org/downloads/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Stable-Baselines3](https://img.shields.io/badge/RL-Stable--Baselines3-orange.svg)](https://stable-baselines3.readthedocs.io/)
+[![Gymnasium](https://img.shields.io/badge/Env-Gymnasium-red.svg)](https://gymnasium.farama.org/)
+[![Code style: PEP 8](https://img.shields.io/badge/code%20style-PEP%208-yellow.svg)](https://peps.python.org/pep-0008/)
+
+</div>
+
+---
+
+> **Paper:** *"When Do Sustainability Priors Help Reinforcement Learning? A Hybrid FBWM–FTOPSIS–PPO Framework for Dynamic Supplier Order Allocation"*
 >
 > **Authors:** Ali Vaezi · Erfan Rabbani · Giulia Bruno
+>
+> **Affiliation:** Politecnico di Torino, Italy
 
-This repository contains the full source code, MCDM data, and manuscript LaTeX source for reproducing all results in the paper. The framework addresses multi-product, multi-supplier order allocation under non-stationary demand, integrating multi-criteria decision-making (MCDM) priors with Proximal Policy Optimization (PPO).
+---
+
+## Table of Contents
+
+- [Overview](#overview)
+- [Architecture](#architecture)
+- [Quick Start](#quick-start)
+- [Repository Structure](#repository-structure)
+- [Core Features](#core-features)
+- [Experimental Design](#experimental-design)
+- [Results Preview](#results-preview)
+- [Reproducibility](#reproducibility)
+- [Citation](#citation)
+- [License](#license)
+
+---
+
+## Overview
+
+This repository provides the complete implementation for a **two-phase hybrid framework** that integrates Multi-Criteria Decision Making (MCDM) with Deep Reinforcement Learning (DRL) for sustainable supplier order allocation under demand uncertainty.
+
+**Phase I** applies Fuzzy Best-Worst Method (FBWM) and Fuzzy TOPSIS to evaluate suppliers across economic, environmental, and resilience dimensions. **Phase II** embeds these sustainability priors into a custom PPO agent (SUPRA-PPO) operating within a stochastic supply chain simulation.
+
+The key research question: *When and how do sustainability priors improve RL-based order allocation?*
+
+---
+
+## Architecture
+
+```
+┌─────────────────────────────────────────────────────────┐
+│                    Phase I: MCDM                        │
+│  ┌──────────┐    ┌───────────┐    ┌──────────────────┐  │
+│  │   FBWM   │───▸│  Criteria │───▸│     FTOPSIS      │  │
+│  │ (weights) │    │  Weights  │    │ (supplier ranks) │  │
+│  └──────────┘    └───────────┘    └────────┬─────────┘  │
+└────────────────────────────────────────────┼────────────┘
+                                             │
+                            Sustainability Priors (scores)
+                                             │
+┌────────────────────────────────────────────▼────────────┐
+│                 Phase II: RL Training                    │
+│  ┌──────────────────┐    ┌───────────────────────────┐  │
+│  │  SupplyChainEnv  │◂──▸│       SUPRA-PPO           │  │
+│  │  (gymnasium)     │    │  - Adaptive Entropy (ES)   │  │
+│  │  - 5 suppliers   │    │  - FTOPSIS reward shaping  │  │
+│  │  - 3 products    │    │  - CV-based scheduling     │  │
+│  │  - 3 scenarios   │    └───────────────────────────┘  │
+│  └──────────────────┘                                   │
+└─────────────────────────────────────────────────────────┘
+```
 
 ---
 
@@ -93,7 +159,37 @@ python src/visualize_results.py
     * Lognormal lead times and systemic supplier disruptions
     * Three market scenarios: Stable Operations, High Volatility, Systemic Shock
 * **MCDM Integration**: **Fuzzy Best-Worst Method (FBWM)** + **Fuzzy TOPSIS (FTOPSIS)** to generate sustainability–resilience priors
-* **Ablation Study**: Three models (M1 = Baseline PPO, M2 = MCDM-weighted, M3 = Full SUPRA-PPO) across 3 scenarios × 3 seeds
+* **Ablation Study**: Three models (M1 = Base-Stock, M2 = Vanilla PPO, M3 = PPO + FTOPSIS priors) across 3 scenarios × 3 seeds
+
+---
+
+## Experimental Design
+
+| Factor | Levels | Details |
+|--------|--------|---------|
+| **Models** | 3 | M1: Base-Stock heuristic, M2: Vanilla PPO, M3: SUPRA-PPO (PPO + FTOPSIS priors) |
+| **Scenarios** | 3 | Stable Operations, High Volatility, Systemic Shock |
+| **Seeds** | 3 | 42, 123, 456 (for statistical robustness) |
+| **Timesteps** | 3M | Per model-scenario combination |
+| **Sensitivity** | 5 | λ_sust ∈ {0.0, 0.1, 0.2, 0.3, 0.5} |
+| **Total runs** | 27 | Full factorial: 3 models × 3 scenarios × 3 seeds |
+
+---
+
+## Results Preview
+
+<div align="center">
+
+| Metric | M1 (Base-Stock) | M2 (Vanilla PPO) | M3 (SUPRA-PPO) |
+|--------|:---:|:---:|:---:|
+| Cost minimisation | Baseline | Improved | **Best** |
+| Sustainability score | Low | Moderate | **Highest** |
+| Bullwhip reduction | None | Moderate | **Significant** |
+| Disruption resilience | Fixed | Adaptive | **Most robust** |
+
+*Full quantitative results are available after running the experiments.*
+
+</div>
 
 ---
 
@@ -109,13 +205,25 @@ python src/visualize_results.py
 
 ## Citation
 
-If you use this code in your research, please cite:
+If you use this code in your research, please cite using the **"Cite this repository"** button on GitHub, or:
 
+```bibtex
+@software{vaezi2026suprappo,
+  author    = {Vaezi, Ali and Rabbani, Erfan and Bruno, Giulia},
+  title     = {{SUPRA-PPO}: A Hybrid {FBWM}--{FTOPSIS}--{PPO} Framework
+               for Dynamic Supplier Order Allocation},
+  year      = {2026},
+  url       = {https://github.com/aliivaezii/FBWM-FTOPSIS-PPO},
+  version   = {1.0.0},
+  license   = {MIT}
+}
 ```
-Vaezi, A., Rabbani, E., & Bruno, G. (2026). When Do Sustainability Priors Help
-Reinforcement Learning? A Hybrid FBWM-FTOPSIS-PPO Framework for Dynamic Supplier
-Order Allocation. [Manuscript in preparation].
-```
+
+---
+
+## Contributing
+
+Contributions are welcome. Please see [`CONTRIBUTING.md`](CONTRIBUTING.md) for guidelines.
 
 ---
 
