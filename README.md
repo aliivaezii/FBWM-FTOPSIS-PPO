@@ -70,7 +70,7 @@ python src/visualize_results.py
 │   ├── preamble.tex               # LaTeX preamble & packages
 │   ├── front_matter.tex           # Title, authors, abstract, keywords
 │   ├── bibliography.bib           # BibTeX references (46 entries)
-│   ├── highlights.tex             # Journal highlights (standalone)
+│   ├── highlights.tex             # Research highlights (standalone)
 │   └── figures/                   # Paper figures (PNG)
 ├── requirements.txt               # Python dependencies
 ├── run_all_experiments.sh         # Shell script to run full experiment suite
@@ -111,8 +111,11 @@ python src/visualize_results.py
 
 If you use this code in your research, please cite:
 
-...
-
+```
+Vaezi, A., Rabbani, E., & Bruno, G. (2026). When Do Sustainability Priors Help
+Reinforcement Learning? A Hybrid FBWM-FTOPSIS-PPO Framework for Dynamic Supplier
+Order Allocation. [Manuscript in preparation].
+```
 
 ---
 
