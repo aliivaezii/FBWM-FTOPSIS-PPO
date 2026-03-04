@@ -1,0 +1,52 @@
+\title{When Do Sustainability Priors Help Reinforcement Learning? A Hybrid FBWM-FTOPSIS-PPO Framework for Dynamic Supplier Order Allocation}
+
+% Add your authors
+% Use \author[inst1]{Name} for authors at the same institution
+% Use \corref{cor1} for the corresponding author
+\author[inst1]{Ali Vaezi\corref{cor1}}
+\ead{ali.vaezi@studenti.polito.it}
+
+\author[inst2]{Erfan Rabbani}
+\ead{erfaninja@gmail.com}
+
+% Add \cortext
+\cortext[cor1]{Corresponding author.}
+
+\affiliation[inst1]{
+    organization={Interuniversity Department
+of Regional and Urban Studies and Planning, Politecnico di Torino},
+    addressline={Corso Duca degli Abruzzi, 24}, 
+    city={Turin},
+    postcode={10129}, 
+    country={Italy}
+}
+\affiliation[inst2]{
+    organization={Department of Management and Production Engineering, Politecnico di Torino},
+    addressline={Corso Duca degli Abruzzi, 24}, 
+    city={Turin},
+    postcode={10129}, 
+    country={Italy}
+}
+
+% Add your abstract
+\begin{abstract}
+Global supply chains must balance cost efficiency, sustainability, and resilience under growing demand uncertainty and disruption risk, yet existing approaches address supplier evaluation and dynamic ordering in isolation.
+Static multi-criteria decision-making (MCDM) methods rank suppliers effectively but cannot adapt to changing conditions, while reinforcement learning (RL) agents learn adaptive policies but must rediscover supplier quality from scratch.
+This paper proposes a two-phase framework that integrates both paradigms.
+In Phase~I, the Fuzzy Best-Worst Method and Fuzzy TOPSIS translate expert judgments across 16~criteria into supplier closeness coefficients.
+In Phase~II, these coefficients are embedded in the state representation of a Proximal Policy Optimization agent, creating a prior-augmented policy trained over $3\!\times\!10^{6}$~timesteps.
+The framework is evaluated against a vanilla PPO baseline and a deterministic heuristic across three demand and disruption scenarios of increasing severity, totalling 27~independent runs.
+Results reveal a regime-dependent trade-off: under stable conditions the prior-augmented agent achieves the lowest procurement cost (Cohen's $d = 1.59$, large effect); under systemic shocks it delivers the highest sustainability score ($d = 0.86$) with markedly lower cross-seed variance; yet under symmetric high-volatility demand, the additional state dimensions impose a learning overhead that favours the simpler baseline.
+Both RL agents reduce costs by 54 to 80\,\% relative to the heuristic and maintain bullwhip ratios below unity, actively dampening demand variability.
+These findings characterise MCDM-derived priors as a regime-activated asset for RL-based supply chain management.
+\end{abstract}
+
+% Add your keywords (separated by \sep)
+% JCP allows 1--7 keywords. We select exactly 7, removing the generic
+% "Multi-criteria decision-making" (already implied by the two specific
+% method names) and "Supply chain resilience" (subsumed by "Sustainable
+% supplier selection" and the title). This maximises discoverability
+% while respecting the journal's guideline to avoid redundant broad terms.
+\begin{keyword}
+Sustainable supplier selection \sep Dynamic order allocation \sep Fuzzy Best-Worst Method \sep Fuzzy TOPSIS \sep Proximal Policy Optimization \sep Reinforcement learning \sep Bullwhip effect
+\end{keyword}
