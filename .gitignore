@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
+.env
+
+# IDE
+.idea/
+.vscode/
+
+# Archive (old files, backups, internal docs)
+archive/
+
+# Results — large outputs
+results/experiments/          # Trained model checkpoints (~160 MB)
+results/figures/              # Generated figures (reproduced via visualize_results.py)
+results/figures_test/
+*.zip
+*.log
+
+# Keep results/mcdm/ tracked (small CSV/NPY files needed for reproduction)
+# ⤷ fbwm_weights.csv, ftopsis_rankings.csv, supplier_scores_for_rl.npy, etc.
+
+# System
+.DS_Store
+
+# Jupyter
+.ipynb_checkpoints/
+
+# TensorBoard logs
+**/runs/
+
+# Logs directory
+logs/
+
+# Compiled LaTeX outputs
+Report/*.pdf
+Report/*.aux
+Report/*.bbl
+Report/*.blg
+Report/*.out
+Report/*.fls
+Report/*.fdb_latexmk
+Report/*.synctex.gz
