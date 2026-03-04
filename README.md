@@ -3,8 +3,6 @@
 > **Paper:** "When Do Sustainability Priors Help Reinforcement Learning? A Hybrid FBWM–FTOPSIS–PPO Framework for Dynamic Supplier Order Allocation"
 >
 > **Authors:** Ali Vaezi · Erfan Rabbani · Giulia Bruno
->
-> **Submitted to:** *Journal of Cleaner Production*
 
 This repository contains the full source code, MCDM data, and manuscript LaTeX source for reproducing all results in the paper. The framework addresses multi-product, multi-supplier order allocation under non-stationary demand, integrating multi-criteria decision-making (MCDM) priors with Proximal Policy Optimization (PPO).
 
