@@ -1,0 +1,6 @@
+Rank,Supplier,Archetype,CC_Score,Allocation_Priority
+1,S5,Premium Innovator,0.8807973813266724,High
+2,S3,Resilient Incumbent,0.7961812575498375,High
+3,S2,Green Specialist,0.6911462184903028,High
+4,S4,Balanced Generalist,0.4941394490743895,Medium
+5,S1,Low-Cost Leader,0.045139930366902906,Low
