@@ -5,7 +5,7 @@
 ### A Hybrid FBWM–FTOPSIS–PPO Framework for Dynamic Supplier Order Allocation
 
 [![Python 3.9+](https://img.shields.io/badge/Python-3.9%2B-blue.svg)](https://www.python.org/downloads/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![License: CC BY-NC-ND 4.0](https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 [![Stable-Baselines3](https://img.shields.io/badge/RL-Stable--Baselines3-orange.svg)](https://stable-baselines3.readthedocs.io/)
 [![Gymnasium](https://img.shields.io/badge/Env-Gymnasium-red.svg)](https://gymnasium.farama.org/)
 [![Code style: PEP 8](https://img.shields.io/badge/code%20style-PEP%208-yellow.svg)](https://peps.python.org/pep-0008/)
@@ -140,7 +140,7 @@ python src/visualize_results.py
 │   └── figures/                   # Paper figures (PNG)
 ├── requirements.txt               # Python dependencies
 ├── run_all_experiments.sh         # Shell script to run full experiment suite
-├── LICENSE                        # MIT License
+├── LICENSE                        # CC BY-NC-ND 4.0 (pre-publication)
 └── README.md
 ```
 
@@ -215,7 +215,7 @@ If you use this code in your research, please cite using the **"Cite this reposi
   year      = {2026},
   url       = {https://github.com/aliivaezii/FBWM-FTOPSIS-PPO},
   version   = {1.0.0},
-  license   = {MIT}
+  license   = {CC-BY-NC-ND-4.0}
 }
 ```
 
@@ -229,4 +229,4 @@ Contributions are welcome. Please see [`CONTRIBUTING.md`](CONTRIBUTING.md) for g
 
 ## License
 
-This project uses the MIT License. See the `LICENSE` file for full text.
+This project is licensed under [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/) during the pre-publication period. You may view and share the code with attribution, but commercial use and derivative works are not permitted. After the associated paper is published, this repository will be re-licensed under the MIT License.
