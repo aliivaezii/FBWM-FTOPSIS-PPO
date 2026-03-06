@@ -1,0 +1,46 @@
+==========================================================================
+STATISTICAL REPORT  --  M2 vs M3  (Welch t-test, Cohen's d)
+==========================================================================
+
+--- Scenario: Stable ---
+  Total Cost (EUR)          t= +13.749  p=1.00e-30  d=+1.588 (large)  sig=Yes
+    -> M3 favoured  (M2=20788357.3601, M3=16377081.9085)
+  Sustainability Score      t=  +5.329  p=3.01e-07  d=+0.615 (medium)  sig=Yes
+    -> M2 favoured  (M2=0.6068, M3=0.5525)
+  Bullwhip Ratio            t=  -5.057  p=8.00e-07  d=-0.584 (medium)  sig=Yes
+    -> M2 favoured  (M2=15.1622, M3=18.8606)
+
+--- Scenario: High Volatility ---
+  Total Cost (EUR)          t=  -5.836  p=2.55e-08  d=-0.674 (medium)  sig=Yes
+    -> M2 favoured  (M2=10942407.8986, M3=12998063.1915)
+  Sustainability Score      t= +11.155  p=2.25e-24  d=+1.288 (large)  sig=Yes
+    -> M2 favoured  (M2=0.6349, M3=0.5783)
+  Bullwhip Ratio            t=  -1.441  p=1.51e-01  d=-0.166 (negligible)  sig=No
+    -> M2 favoured  (M2=0.3857, M3=0.4144)
+
+--- Scenario: Systemic Shock ---
+  Total Cost (EUR)          t=  -6.865  p=1.28e-10  d=-0.793 (medium)  sig=Yes
+    -> M2 favoured  (M2=3796005.9954, M3=5150735.1220)
+  Sustainability Score      t=  -7.486  p=4.87e-12  d=-0.864 (large)  sig=Yes
+    -> M3 favoured  (M2=0.7666, M3=0.8416)
+  Bullwhip Ratio            t=  -6.340  p=9.52e-10  d=-0.732 (medium)  sig=Yes
+    -> M2 favoured  (M2=7.7081, M3=9.6966)
+
+==========================================================================
+CROSS-SEED MEAN SUMMARY
+==========================================================================
+
+  Stable:
+    M1 (Base-Stock): cost=EUR 45.27M +/- 0.55M  sust=0.573  bull=0.00
+    M2 (Vanilla PPO): cost=EUR 20.79M +/- 3.62M  sust=0.607  bull=15.16
+    M3 (PPO + Priors): cost=EUR 16.38M +/- 1.52M  sust=0.553  bull=18.86
+
+  High Volatility:
+    M1 (Base-Stock): cost=EUR 34.43M +/- 1.01M  sust=0.573  bull=0.00
+    M2 (Vanilla PPO): cost=EUR 10.94M +/- 1.21M  sust=0.635  bull=0.39
+    M3 (PPO + Priors): cost=EUR 13.00M +/- 4.14M  sust=0.578  bull=0.41
+
+  Systemic Shock:
+    M1 (Base-Stock): cost=EUR 19.05M +/- 0.62M  sust=0.573  bull=0.00
+    M2 (Vanilla PPO): cost=EUR 3.80M +/- 0.55M  sust=0.767  bull=7.71
+    M3 (PPO + Priors): cost=EUR 5.15M +/- 2.35M  sust=0.842  bull=9.70

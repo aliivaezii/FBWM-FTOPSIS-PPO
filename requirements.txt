@@ -1,12 +1,12 @@
-gymnasium
-numpy
-pandas
-matplotlib
-seaborn
-scipy
-torch
-stable-baselines3
-tensorboard
-tqdm
-rich
+gymnasium==1.1.1
+numpy==2.0.2
+pandas==2.3.3
+matplotlib==3.9.4
+seaborn==0.13.2
+scipy==1.13.1
+torch==2.8.0
+stable-baselines3==2.7.0
+tensorboard==2.20.0
+tqdm==4.67.1
+rich==14.2.0
 

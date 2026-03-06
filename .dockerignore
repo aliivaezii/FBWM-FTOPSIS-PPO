@@ -1,0 +1,16 @@
+# Docker ignore file to keep the build context small
+.git
+.github
+.vscode
+venv/
+__pycache__
+*.pyc
+*.pyo
+*.egg-info
+archive/
+Report/
+results/experiments/
+results/figures/
+*.pdf
+*.png
+*.DS_Store

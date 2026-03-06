@@ -9,6 +9,7 @@
 [![Stable-Baselines3](https://img.shields.io/badge/RL-Stable--Baselines3-orange.svg)](https://stable-baselines3.readthedocs.io/)
 [![Gymnasium](https://img.shields.io/badge/Env-Gymnasium-red.svg)](https://gymnasium.farama.org/)
 [![Code style: PEP 8](https://img.shields.io/badge/code%20style-PEP%208-yellow.svg)](https://peps.python.org/pep-0008/)
+[![Docker](https://img.shields.io/badge/Docker-Supported-2496ED.svg?logo=docker&logoColor=white)](https://www.docker.com/)
 
 </div>
 
@@ -109,6 +110,26 @@ python src/run_experiment.py
 python src/visualize_results.py
 ```
 
+### Docker (Alternative)
+
+Build and run the entire experiment suite in a container:
+
+```bash
+# Build the image
+docker build -t supra-ppo .
+
+# Run environment validation
+docker run --rm supra-ppo
+
+# Run experiments (results are saved inside the container)
+docker run --rm -v $(pwd)/results:/app/results supra-ppo \
+    python src/run_experiment.py
+
+# Run visualisation
+docker run --rm -v $(pwd)/results:/app/results supra-ppo \
+    python src/visualize_results.py
+```
+
 ---
 
 ## Repository Structure
@@ -138,7 +159,9 @@ python src/visualize_results.py
 │   ├── bibliography.bib           # BibTeX references (46 entries)
 │   ├── highlights.tex             # Research highlights (standalone)
 │   └── figures/                   # Paper figures (PNG)
-├── requirements.txt               # Python dependencies
+├── requirements.txt               # Pinned Python dependencies
+├── Dockerfile                     # Container-based reproducibility
+├── .dockerignore                  # Docker build exclusions
 ├── run_all_experiments.sh         # Shell script to run full experiment suite
 ├── LICENSE                        # CC BY-NC-ND 4.0 (pre-publication)
 └── README.md

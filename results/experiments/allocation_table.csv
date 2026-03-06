@@ -1,0 +1,10 @@
+Scenario,Model,S1_Orders,S2_Orders,S3_Orders,S4_Orders,S5_Orders,Total_Orders
+High_Volatility,M1: Base-Stock,110.0,82.5,99.0,99.0,110.3,500.8
+High_Volatility,M2: Vanilla PPO,17.38,49.07,58.01,43.52,14.33,182.31
+High_Volatility,M3: PPO + Priors,39.48,49.98,52.72,29.24,23.31,194.73
+Stable_Operations,M1: Base-Stock,110.0,82.5,99.0,99.0,110.3,500.8
+Stable_Operations,M2: Vanilla PPO,18.24,42.93,34.05,47.79,17.96,160.97
+Stable_Operations,M3: PPO + Priors,33.94,41.98,23.94,35.16,23.64,158.67
+Systemic_Shock,M1: Base-Stock,110.0,82.5,99.0,99.0,110.3,500.8
+Systemic_Shock,M2: Vanilla PPO,14.21,2.61,30.99,15.82,92.12,155.75
+Systemic_Shock,M3: PPO + Priors,2.7,2.08,23.74,1.72,106.11,136.34

@@ -1,0 +1,21 @@
+==========================================================================
+ANOVA REPORT  --  M1 vs M2 vs M3  (one-way, per scenario)
+==========================================================================
+
+--- Stable ---
+              M1 (Base-Stock): n=150, mean=EUR 45.27M
+             M2 (Vanilla PPO): n=150, mean=EUR 20.79M
+            M3 (PPO + Priors): n=150, mean=EUR 16.38M
+    F=6924.113, p=0.00e+00  (significant)
+
+--- High Volatility ---
+              M1 (Base-Stock): n=150, mean=EUR 34.43M
+             M2 (Vanilla PPO): n=150, mean=EUR 10.94M
+            M3 (PPO + Priors): n=150, mean=EUR 13.00M
+    F=3881.285, p=3.11e-283  (significant)
+
+--- Systemic Shock ---
+              M1 (Base-Stock): n=150, mean=EUR 19.05M
+             M2 (Vanilla PPO): n=150, mean=EUR 3.80M
+            M3 (PPO + Priors): n=150, mean=EUR 5.15M
+    F=5150.577, p=2.19e-309  (significant)
