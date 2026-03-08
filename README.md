@@ -152,13 +152,6 @@ docker run --rm -v $(pwd)/results:/app/results supra-ppo \
 │       ├── ftopsis_rankings.csv   # Fuzzy TOPSIS supplier rankings
 │       ├── dimensional_scores.csv # Per-dimension supplier scores
 │       └── supplier_scores_for_rl.npy  # NumPy array used by RL agent
-├── Report/                        # Manuscript LaTeX source
-│   ├── main.tex                   # Main manuscript
-│   ├── preamble.tex               # LaTeX preamble & packages
-│   ├── front_matter.tex           # Title, authors, abstract, keywords
-│   ├── bibliography.bib           # BibTeX references (46 entries)
-│   ├── highlights.tex             # Research highlights (standalone)
-│   └── figures/                   # Paper figures (PNG)
 ├── requirements.txt               # Pinned Python dependencies
 ├── Dockerfile                     # Container-based reproducibility
 ├── .dockerignore                  # Docker build exclusions
